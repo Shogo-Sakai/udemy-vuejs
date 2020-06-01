@@ -9,6 +9,41 @@
     <keep-alive>
       <component :is="currentComponent"></component>
     </keep-alive>
+    <div>
+      <h2>イベントフォーム</h2>
+      <input
+        id="title"
+        type="text"
+        v-model.lazy="eventData.title"
+      >
+      <pre>{{ eventData.title }}</pre>
+    </div>
+    <div>
+      <label for="maxNumber">最大人数</label>
+      <input
+        id="maxNumber"
+        type="number"
+        v-model.number="eventData.maxNumber"
+      >
+      <p>{{ typeof eventData.maxNumber }}</p>
+    </div>
+    <div>
+      <label for="maxNumber">主催者</label>
+      <input
+        id="host"
+        type="text"
+        v-model.trim="eventData.host"
+      >
+      <pre>{{ eventData.host }}</pre>
+      <label for="detail">詳細</label>
+      <textarea
+        id="detail"
+        cols= '30'
+        rows= '10'
+        v-model="eventData.detail"
+      ></textarea>
+      <p style="white-space: pre;">{{eventData.detail}}</p>
+    </div>
   </div>
 </template>
 
@@ -21,7 +56,13 @@ export default {
   data() {
     return {
       number: 20,
-      currentComponent: 'Home'
+      currentComponent: 'Home',
+      eventData: {
+        title: 'タイトル',
+        maxNumber: 0,
+        host: '',
+        detail: ''
+      }
     };
   },
   components: {

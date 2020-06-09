@@ -1,3 +1,3 @@
 <template>
-  <p v-border>Home</p>
+  <p v-border="{'width':'10px', 'color':'red' }">Home</p>
 </template>

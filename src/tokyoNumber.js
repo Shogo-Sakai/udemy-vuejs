@@ -11,5 +11,7 @@ export const tokyoNumber = {
       return value.toLowerCase();
     }
   },
-
+  created(){
+    console.log('created at mixins.')
+  }
 }

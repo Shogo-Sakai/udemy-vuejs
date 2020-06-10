@@ -34,8 +34,11 @@ export default {
       if(binding.modifiers.shadow){
         el.style.boxShadow = "0px 2px 5px rgba(0,0,0,0.26)";
       }
-      console.log(binding);
+      // console.log(binding);
     }
+  },
+  created(){
+    console.log("created at component home")
   }
 }
 </script>

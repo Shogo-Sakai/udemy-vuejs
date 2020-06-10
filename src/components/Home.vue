@@ -1,11 +1,19 @@
 <template>
-  <p v-border:solid.round.shadow="{'width':'5px', 'color':'red' }">{{tmpData}}</p>
+  <div>
+    <p v-border:solid.round.shadow="{'width':'5px', 'color':'red' }">{{tmpData}}</p>
+    <h2>{{ title | upperCase }}</h2>
+    <p>{{ subTitle | upperCase }}</p>
+  </div>
 </template>
 
 <script>
 export default {
   data(){
-    return {'tmpData':'hello'};
+    return {
+      tmpData:"hello",
+      title: "Welcome",
+      subTitle: "my Blog"
+      };
   },
   directives:{
     border(el, binding){
